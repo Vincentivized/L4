@@ -6,13 +6,13 @@
   <title>اشترك الان</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
       background: #fff;
-      color: #333;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      margin: 0;
       direction: rtl;
+      color: #333;
     }
 
     .container {
@@ -66,9 +66,19 @@
     <p>للاشتراك بطريقه صحيحه</p>
     <p>ادخل رقم هاتفك من خلال احد الازرار بالاسفل</p>
     <p>ادخل الكود المرسل اليك واكد الاشتراك</p>
-    <button class="btn">سجل رقم هاتفك الآن</button>
-    <button class="btn">إضغط هنا للإشتراك برقم هاتفك</button>
+    <a id="btn1" class="btn">سجل رقم هاتفك الآن</a>
+    <a id="btn2" class="btn">إضغط هنا للإشتراك برقم هاتفك</a>
   </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const cid = params.get('cid') || '';
+    const sub = params.get('1') || '';
+
+    const offerUrl = `https://win.kuwait4u.click/?utm_medium=0f68964d3d2f4a4bb5f4b72ddea72bdbb0611590&utm_campaign=M8&1=${sub}&cid=${cid}`;
+
+    document.getElementById("btn1").href = offerUrl;
+    document.getElementById("btn2").href = offerUrl;
+  </script>
 </body>
 </html>
-
