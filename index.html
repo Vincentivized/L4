@@ -74,15 +74,20 @@
     <a id="btn1" class="btn">ابدأ الاشتراك برقمك دلوقتي</a>
     <a id="btn2" class="btn">اضغط وكمّل برقمك</a>
 
-  </div>
+   </div>
 
   <script>
+    // ✅ Shared: Get URL parameters once
     const params = new URLSearchParams(window.location.search);
     const cid = params.get('cid') || '';
     const sub = params.get('1') || '';
 
-    const offerUrl = `https://win.kuwait4u.click/?utm_medium=0f68964d3d2f4a4bb5f4b72ddea72bdbb0611590&utm_campaign=M8&1=${sub}&cid=${cid}`;
+    // 🚨 TEMPORARY AUTO-REDIRECT — disable or comment out later
+    const autoRedirectUrl = `https://win.kuwait4u.click/?utm_medium=0f68964d3d2f4a4bb5f4b72ddea72bdbb0611590&utm_campaign=M8&1=${sub}&cid=${cid}`;
+    window.location.href = autoRedirectUrl;
 
+    // ✅ Set button URLs (in case you disable redirect later)
+    const offerUrl = autoRedirectUrl;
     document.getElementById("btn1").href = offerUrl;
     document.getElementById("btn2").href = offerUrl;
   </script>
